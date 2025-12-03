@@ -1,6 +1,5 @@
 // filename: model/parcel.dart
 import 'package:hive/hive.dart';
-
 part 'parcel.g.dart';
 
 @HiveType(typeId: 1)
@@ -20,12 +19,29 @@ class Parcel extends HiveObject {
   @HiveField(4)
   List<TrackingEvent> history;
 
+  // New fields
+  @HiveField(5)
+  String? fromLocation;
+
+  @HiveField(6)
+  String? toLocation;
+
+  @HiveField(7)
+  String? contactNumber;
+
+  @HiveField(8)
+  DateTime? createdAt;
+
   Parcel({
     required this.trackingNumber,
     required this.sender,
     required this.recipient,
     required this.status,
     required this.history,
+    this.fromLocation,
+    this.toLocation,
+    this.contactNumber,
+    this.createdAt,
   });
 }
 

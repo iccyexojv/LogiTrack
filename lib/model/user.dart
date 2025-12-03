@@ -1,4 +1,3 @@
-// filename: model/user.dart
 import 'package:hive/hive.dart';
 
 part 'user.g.dart';
@@ -12,11 +11,28 @@ class User extends HiveObject {
   String passwordHash;
 
   @HiveField(2)
-  String role; // 'admin' or 'customer'
+  String role; 
+
+  // New Fields
+  @HiveField(3)
+  String email;
+
+  @HiveField(4)
+  String phone;
+
+  @HiveField(5)
+  String age; 
+
+  @HiveField(6)
+  String location;
 
   User({
     required this.username,
     required this.passwordHash,
     required this.role,
+    this.email = '',
+    this.phone = '',
+    this.age = '',
+    this.location = '',
   });
 }

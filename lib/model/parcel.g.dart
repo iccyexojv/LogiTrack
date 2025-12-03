@@ -22,13 +22,17 @@ class ParcelAdapter extends TypeAdapter<Parcel> {
       recipient: fields[2] as String,
       status: fields[3] as String,
       history: (fields[4] as List).cast<TrackingEvent>(),
+      fromLocation: fields[5] as String?,
+      toLocation: fields[6] as String?,
+      contactNumber: fields[7] as String?,
+      createdAt: fields[8] as DateTime?,
     );
   }
 
   @override
   void write(BinaryWriter writer, Parcel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(9)
       ..writeByte(0)
       ..write(obj.trackingNumber)
       ..writeByte(1)
@@ -38,7 +42,15 @@ class ParcelAdapter extends TypeAdapter<Parcel> {
       ..writeByte(3)
       ..write(obj.status)
       ..writeByte(4)
-      ..write(obj.history);
+      ..write(obj.history)
+      ..writeByte(5)
+      ..write(obj.fromLocation)
+      ..writeByte(6)
+      ..write(obj.toLocation)
+      ..writeByte(7)
+      ..write(obj.contactNumber)
+      ..writeByte(8)
+      ..write(obj.createdAt);
   }
 
   @override

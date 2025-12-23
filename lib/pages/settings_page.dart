@@ -87,8 +87,8 @@ class _SettingsPageState extends State<SettingsPage> {
                       width: double.infinity,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.deepPurple,
-                          foregroundColor: Colors.white,
+                          backgroundColor: const Color.fromARGB(255, 39, 2, 104),
+                          foregroundColor: const Color.fromARGB(255, 255, 194, 24),
                         ),
                         onPressed: _changePassword, 
                         child: const Text('UPDATE PASSWORD')

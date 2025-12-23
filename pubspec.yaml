@@ -16,6 +16,9 @@ dependencies:
   intl: ^0.18.1
   google_fonts: ^6.1.0
   crypto: ^3.0.3
+  # --- MAP PACKAGES ---
+  flutter_map: ^8.0.0
+  latlong2: ^0.9.1
 
 dev_dependencies:
   flutter_test:
